@@ -6,6 +6,7 @@ using System.IO;
 public class MainManager : MonoBehaviour
 {
     public static MainManager Instance;
+
     public string playerName;
     public int playerHighScore;
     public string topScorerName;
@@ -15,7 +16,7 @@ public class MainManager : MonoBehaviour
 
     private void Awake()
     {
-if (Instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
             return;
@@ -99,6 +100,7 @@ if (Instance != null)
     }
     public void LoadLastPlayerPlayed()
     {
+       
         string path = Application.persistentDataPath + "/savefilelastplayer.json";
         if (File.Exists(path))
         {
